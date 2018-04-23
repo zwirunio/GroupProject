@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
         Student getByName(String name);
 
+        Student getByEmailAndPasswd(String email, String passwd);
+
 
     }
 

@@ -19,9 +19,10 @@ public class MyAppStudentDetailsService implements UserDetailsService {
     private StudentRepo studentRepo;
 
     @Override
-    public UserDetails loadUserByUsername(String studentName) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String studentEmail) throws UsernameNotFoundException {
 
-        Student activeUserInfo                   = studentRepo.getByName(studentName);
+        //Student activeUserInfo                   = studentRepo.getByName(studentName);
+        Student activeUserInfo                   = studentRepo.getByEmailAndPasswd(studentEmail, studentEmail);
 
         if(activeUserInfo == null) {
             throw new UsernameNotFoundException("Student not found");
@@ -30,11 +31,14 @@ public class MyAppStudentDetailsService implements UserDetailsService {
         GrantedAuthority authority            = new SimpleGrantedAuthority(activeUserInfo.getRole());
 
         //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String userNameVal                    = activeUserInfo.getName();
-        String userSurnameVal                 = activeUserInfo.getPasswd();
+        String userEmailVal                    = activeUserInfo.getEmail();
+        String userPassVal                 = activeUserInfo.getPasswd();
 
-       UserDetails userDetails = new org.springframework.security.core.userdetails.User(userNameVal, userSurnameVal, Arrays.asList(authority));
-       return userDetails;
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(userEmailVal, userPassVal, Arrays.asList(authority));
+        return userDetails;
     }
+
+
+
 }
 
