@@ -9,26 +9,34 @@ import javax.persistence.Id;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
-    private Long   studentId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long studentId;
 
-    String name;
-    String lname;
-    String email;
-    String passwd;
-    String gitHub;
-    String phone;
+    private String name;
+    private String lname;
+    private String email;
+    private String passwd;
+    private String gitHub;
+    private String phone;
+    private String ocenaProjektu1;
+    private String ocenaOpisowaProjektu1;
+    private String ocenaProjektu2;
+    private String ocenaOpisowaProjektu2;
+    private String ocenaProjektu3;
+    private String ocenaOpisowaProjektu3;
+    private String ocenaProjektu4;
+    private String ocenaOpisowaProjektu4;
+    private String rola;
 
     public Student() {
     }
 
-    public Student(String name, String lname, String email, String passwd, String gitHub, String phone) {
-        this.name = name;
-        this.lname = lname;
-        this.email = email;
-        this.passwd = passwd;
-        this.gitHub = gitHub;
-        this.phone = phone;
+    public Student(String ocenaProjektu1, String ocenaOpisowaProjektu1, String ocenaProjektu2, String ocenaOpisowaProjektu2, String ocenaProjektu3, String ocenaOpisowaProjektu3, String ocenaProjektu4, String ocenaOpisowaProjektu4, String rola) {
+        this.ocenaProjektu1 = "N/A";
+        this.ocenaProjektu2 = "N/A";
+        this.ocenaProjektu3 = "N/A";
+        this.ocenaProjektu4 = "N/A";
+        this.rola = "ROLE_USER";
     }
 
     public String getName() {
