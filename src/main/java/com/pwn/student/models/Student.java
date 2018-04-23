@@ -3,10 +3,7 @@ package com.pwn.student.models;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 
 @Entity
@@ -16,32 +13,55 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO )
     private Long   studentId;
 
+    @Column(name="Student_name")
     @NotEmpty(message = "The name connot be left empty")
     private String name;
 
+    @Column(name="Student_surname")
     @NotEmpty(message = "The surname connot be left empty")
     private String lname;
 
+    @Column(name="Email")
     @Email(message = "Please enter a valid e-mail address")
     private String email;
 
+    @Column(name="Password")
     @Min(value = 6, message = "The password must be equal or longer than 6 characters")
     private String passwd;
 
+    @Column(name="GitHub_login")
     @NotEmpty(message = "The GitHub login connot be left empty")
     private String gitHub;
 
+    @Column(name="Phone_number")
     @NotEmpty(message = "The phone connot be left empty")
     private String phone;
 
+    @Column(name="Project1_grade")
     private String project1grade;
+
+    @Column(name="Project1_descriptive_grade")
     private String project1descgrade;
+
+    @Column(name="Project2_grade")
     private String project2grade;
+
+    @Column(name="Project2_descriptive_grade")
     private String project2descgrade;
+
+    @Column(name="Project3_grade")
     private String project3grade;
+
+    @Column(name="Project3_descriptive_grade")
     private String project3descgrade;
+
+    @Column(name="Project4_grade")
     private String project4grade;
+
+    @Column(name="Project4_descriptive_grade")
     private String project4descgrade;
+
+    @Column(name="Role")
     private String role;
 
     public Student() {
@@ -197,23 +217,23 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studentId=" + studentId +
-                ", name='" + name + '\'' +
-                ", lname='" + lname + '\'' +
-                ", email='" + email + '\'' +
-                ", passwd='" + passwd + '\'' +
-                ", gitHub='" + gitHub + '\'' +
-                ", phone='" + phone + '\'' +
-                ", project1grade='" + project1grade + '\'' +
-                ", project1descgrade='" + project1descgrade + '\'' +
-                ", project2grade='" + project2grade + '\'' +
-                ", project2descgrade='" + project2descgrade + '\'' +
-                ", project3grade='" + project3grade + '\'' +
-                ", project3descgrade='" + project3descgrade + '\'' +
-                ", project4grade='" + project4grade + '\'' +
-                ", project4descgrade='" + project4descgrade + '\'' +
-                ", role='" + role + '\'' +
+        return "Student details{" +
+                "studentId:" + studentId +
+                ", student name:'" + name + '\'' +
+                ", student surname:'" + lname + '\'' +
+                ", e-mail:'" + email + '\'' +
+                ", password:'" + passwd + '\'' +
+                ", GitHub login:'" + gitHub + '\'' +
+                ", phone number:'" + phone + '\'' +
+                ", project 1 grade:'" + project1grade + '\'' +
+                ", project 1 descriptive grade:'" + project1descgrade + '\'' +
+                ", project 2 grade='" + project2grade + '\'' +
+                ", project 2 descriptive grade:'" + project2descgrade + '\'' +
+                ", project 3 grade='" + project3grade + '\'' +
+                ", project 3 descriptive grade:'" + project3descgrade + '\'' +
+                ", project 4 grade='" + project4grade + '\'' +
+                ", project 4 descriptive grade:'" + project4descgrade + '\'' +
+                ", role:='" + role + '\'' +
                 '}';
     }
 }

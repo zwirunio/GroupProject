@@ -15,12 +15,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled=true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+
     @Autowired
     private MyAppStudentDetailsService myAppStudentDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+
+                .antMatchers("/").hasAnyRole("USER")
 
                 //login configuration
                 .and().formLogin()
@@ -39,10 +43,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().exceptionHandling()
                 .accessDeniedPage("/error-view");
     }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        auth.userDetailsService(myAppStudentDetailsService).passwordEncoder(passwordEncoder);
-    }
 }
+//
+//    @Autowired
+//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        auth.userDetailsService(myAppStudentDetailsService).passwordEncoder(passwordEncoder);
+//    }
+//}
