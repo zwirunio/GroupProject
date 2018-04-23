@@ -18,24 +18,24 @@ public class Student {
     private String passwd;
     private String gitHub;
     private String phone;
-    private String ocenaProjektu1;
-    private String ocenaOpisowaProjektu1;
-    private String ocenaProjektu2;
-    private String ocenaOpisowaProjektu2;
-    private String ocenaProjektu3;
-    private String ocenaOpisowaProjektu3;
-    private String ocenaProjektu4;
-    private String ocenaOpisowaProjektu4;
+    private String projectGrade1;
+    private String projectGradeDesc1;
+    private String projectGrade2;
+    private String projectGradeDesc2;
+    private String projectGrade3;
+    private String projectGradeDesc3;
+    private String projectGrade4;
+    private String projectGradeDesc4;
     private String rola;
 
     public Student() {
     }
 
-    public Student(String ocenaProjektu1, String ocenaOpisowaProjektu1, String ocenaProjektu2, String ocenaOpisowaProjektu2, String ocenaProjektu3, String ocenaOpisowaProjektu3, String ocenaProjektu4, String ocenaOpisowaProjektu4, String rola) {
-        this.ocenaProjektu1 = "N/A";
-        this.ocenaProjektu2 = "N/A";
-        this.ocenaProjektu3 = "N/A";
-        this.ocenaProjektu4 = "N/A";
+    public Student(String projectGrade1, String projectGrade2, String projectGrade3, String projectGrade4, String rola) {
+        this.projectGrade1 = "N/A";
+        this.projectGrade2 = "N/A";
+        this.projectGrade3 = "N/A";
+        this.projectGrade4 = "N/A";
         this.rola = "ROLE_USER";
     }
 
@@ -45,78 +45,6 @@ public class Student {
 
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
-    }
-
-    public String getOcenaProjektu1() {
-        return ocenaProjektu1;
-    }
-
-    public void setOcenaProjektu1(String ocenaProjektu1) {
-        this.ocenaProjektu1 = ocenaProjektu1;
-    }
-
-    public String getOcenaOpisowaProjektu1() {
-        return ocenaOpisowaProjektu1;
-    }
-
-    public void setOcenaOpisowaProjektu1(String ocenaOpisowaProjektu1) {
-        this.ocenaOpisowaProjektu1 = ocenaOpisowaProjektu1;
-    }
-
-    public String getOcenaProjektu2() {
-        return ocenaProjektu2;
-    }
-
-    public void setOcenaProjektu2(String ocenaProjektu2) {
-        this.ocenaProjektu2 = ocenaProjektu2;
-    }
-
-    public String getOcenaOpisowaProjektu2() {
-        return ocenaOpisowaProjektu2;
-    }
-
-    public void setOcenaOpisowaProjektu2(String ocenaOpisowaProjektu2) {
-        this.ocenaOpisowaProjektu2 = ocenaOpisowaProjektu2;
-    }
-
-    public String getOcenaProjektu3() {
-        return ocenaProjektu3;
-    }
-
-    public void setOcenaProjektu3(String ocenaProjektu3) {
-        this.ocenaProjektu3 = ocenaProjektu3;
-    }
-
-    public String getOcenaOpisowaProjektu3() {
-        return ocenaOpisowaProjektu3;
-    }
-
-    public void setOcenaOpisowaProjektu3(String ocenaOpisowaProjektu3) {
-        this.ocenaOpisowaProjektu3 = ocenaOpisowaProjektu3;
-    }
-
-    public String getOcenaProjektu4() {
-        return ocenaProjektu4;
-    }
-
-    public void setOcenaProjektu4(String ocenaProjektu4) {
-        this.ocenaProjektu4 = ocenaProjektu4;
-    }
-
-    public String getOcenaOpisowaProjektu4() {
-        return ocenaOpisowaProjektu4;
-    }
-
-    public void setOcenaOpisowaProjektu4(String ocenaOpisowaProjektu4) {
-        this.ocenaOpisowaProjektu4 = ocenaOpisowaProjektu4;
-    }
-
-    public String getRola() {
-        return rola;
-    }
-
-    public void setRola(String rola) {
-        this.rola = rola;
     }
 
     public String getName() {
@@ -167,6 +95,78 @@ public class Student {
         this.phone = phone;
     }
 
+    public String getProjectGrade1() {
+        return projectGrade1;
+    }
+
+    public void setProjectGrade1(String projectGrade1) {
+        this.projectGrade1 = projectGrade1;
+    }
+
+    public String getProjectGradeDesc1() {
+        return projectGradeDesc1;
+    }
+
+    public void setProjectGradeDesc1(String projectGradeDesc1) {
+        this.projectGradeDesc1 = projectGradeDesc1;
+    }
+
+    public String getProjectGrade2() {
+        return projectGrade2;
+    }
+
+    public void setProjectGrade2(String projectGrade2) {
+        this.projectGrade2 = projectGrade2;
+    }
+
+    public String getProjectGradeDesc2() {
+        return projectGradeDesc2;
+    }
+
+    public void setProjectGradeDesc2(String projectGradeDesc2) {
+        this.projectGradeDesc2 = projectGradeDesc2;
+    }
+
+    public String getProjectGrade3() {
+        return projectGrade3;
+    }
+
+    public void setProjectGrade3(String projectGrade3) {
+        this.projectGrade3 = projectGrade3;
+    }
+
+    public String getProjectGradeDesc3() {
+        return projectGradeDesc3;
+    }
+
+    public void setProjectGradeDesc3(String projectGradeDesc3) {
+        this.projectGradeDesc3 = projectGradeDesc3;
+    }
+
+    public String getProjectGrade4() {
+        return projectGrade4;
+    }
+
+    public void setProjectGrade4(String projectGrade4) {
+        this.projectGrade4 = projectGrade4;
+    }
+
+    public String getProjectGradeDesc4() {
+        return projectGradeDesc4;
+    }
+
+    public void setProjectGradeDesc4(String projectGradeDesc4) {
+        this.projectGradeDesc4 = projectGradeDesc4;
+    }
+
+    public String getRola() {
+        return rola;
+    }
+
+    public void setRola(String rola) {
+        this.rola = rola;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -177,14 +177,14 @@ public class Student {
                 ", passwd='" + passwd + '\'' +
                 ", gitHub='" + gitHub + '\'' +
                 ", phone='" + phone + '\'' +
-                ", ocenaProjektu1='" + ocenaProjektu1 + '\'' +
-                ", ocenaOpisowaProjektu1='" + ocenaOpisowaProjektu1 + '\'' +
-                ", ocenaProjektu2='" + ocenaProjektu2 + '\'' +
-                ", ocenaOpisowaProjektu2='" + ocenaOpisowaProjektu2 + '\'' +
-                ", ocenaProjektu3='" + ocenaProjektu3 + '\'' +
-                ", ocenaOpisowaProjektu3='" + ocenaOpisowaProjektu3 + '\'' +
-                ", ocenaProjektu4='" + ocenaProjektu4 + '\'' +
-                ", ocenaOpisowaProjektu4='" + ocenaOpisowaProjektu4 + '\'' +
+                ", projectGrade1='" + projectGrade1 + '\'' +
+                ", projectGradeDesc1='" + projectGradeDesc1 + '\'' +
+                ", projectGrade2='" + projectGrade2 + '\'' +
+                ", projectGradeDesc2='" + projectGradeDesc2 + '\'' +
+                ", projectGrade3='" + projectGrade3 + '\'' +
+                ", projectGradeDesc3='" + projectGradeDesc3 + '\'' +
+                ", projectGrade4='" + projectGrade4 + '\'' +
+                ", projectGradeDesc4='" + projectGradeDesc4 + '\'' +
                 ", rola='" + rola + '\'' +
                 '}';
     }
