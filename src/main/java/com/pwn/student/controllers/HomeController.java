@@ -9,7 +9,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-
         return "index";
     }
 
@@ -22,7 +21,6 @@ public class HomeController {
 
     @GetMapping("/errorView")
     public String errorViewHandler() {
-
         return "errorView";
     }
 

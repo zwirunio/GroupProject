@@ -2,6 +2,7 @@ package com.pwn.student.models;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -38,52 +39,39 @@ public class Student {
     private String phone;
 
     @Column(name="Project1_grade")
-    private String project1grade;
+    private String project1grade="N/A";
 
     @Column(name="Project1_descriptive_grade")
     private String project1descgrade;
 
     @Column(name="Project2_grade")
-    private String project2grade;
+    private String project2grade="N/A";
 
     @Column(name="Project2_descriptive_grade")
     private String project2descgrade;
 
     @Column(name="Project3_grade")
-    private String project3grade;
+    private String project3grade="N/A";
 
     @Column(name="Project3_descriptive_grade")
     private String project3descgrade;
 
     @Column(name="Project4_grade")
-    private String project4grade;
+    private String project4grade="N/A";
 
     @Column(name="Project4_descriptive_grade")
     private String project4descgrade;
 
+    //@Value("ROLE_USER")
     @Column(name="Role")
-    private String role;
+    private String role="ROLE_USER";
 
     public Student() {
     }
 
-    public Student(String name, String lname, String email, String passwd, String gitHub, String phone, String project1grade, String project1descgrade, String project2grade, String project2descgrade, String project3grade, String project3descgrade, String project4grade, String project4descgrade, String role) {
-        this.name = name;
-        this.lname = lname;
-        this.email = email;
-        this.passwd = passwd;
-        this.gitHub = gitHub;
-        this.phone = phone;
-        this.project1grade = "N/A";
-        this.project1descgrade = project1descgrade;
-        this.project2grade = "N/A";
-        this.project2descgrade = project2descgrade;
-        this.project3grade = "N/A";
-        this.project3descgrade = project3descgrade;
-        this.project4grade = "N/A";
-        this.project4descgrade = project4descgrade;
-        this.role = "ROLE_USER";
-    }
+
+
+
 
 
     public Long getStudentId() {
