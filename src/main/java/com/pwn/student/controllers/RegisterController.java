@@ -25,8 +25,8 @@ public class RegisterController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute Student student) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        student.setPasswd(passwordEncoder.encode(student.getPasswd()));
+     //   BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+     //   student.setPasswd(passwordEncoder.encode(student.getPasswd()));
         studentRepo.save(student);
         return "redirect:/";
     }

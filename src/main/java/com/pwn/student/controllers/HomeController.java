@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/login")
-    public String login() {
+    @RequestMapping("/")
+    public String home() {
 
-        return "loginFormView";
+        return "index";
     }
 
-    @GetMapping("/errorView")
+    @GetMapping("/error-view")
     public String errorViewHundler() {
 
         return "errorView";

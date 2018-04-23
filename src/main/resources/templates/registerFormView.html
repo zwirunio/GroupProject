@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title> Rejestracja </title>
+    <link rel="stylesheet" href="/css/styles.css"/>
 </head>
 <body>
+
+<form th:action="@{/register}" th:object = "${student}" method="post">
+
+    <label for="un">Imie</label>
+    <p><input id="un" type="text" th:field = "*{name}" /></p>
+
+    <label for="uln">Nazwisko</label>
+    <p><input id="uln" type="text" th:field = "*{lname}" /></p>
+
+    <label for="password">Password</label>
+    <p><input id="password" type="text" th:field = "*{passwd}" /></p>
+
+    <label for="uemail">Email</label>
+    <p><input id="uemail" type="text" th:field = "*{email}" /></p>
+
+    <label for="ghub">GHub</label>
+    <p><input id="ghub" type="text" th:field = "*{gitHub}" /></p>
+
+    <label for="utel">Phone</label>
+    <p><input id="utel" type="text" th:field = "*{phone}" /></p>
+
+        <p><input type="submit" value = "Add" /></p>
+</form>
 
 </body>
 </html>
