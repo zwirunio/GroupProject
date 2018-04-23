@@ -16,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+
     @Autowired
     private MyAppStudentDetailsService myAppStudentDetailsService;
 

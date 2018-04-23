@@ -13,11 +13,17 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/error-view")
-    public String errorViewHundler() {
+    @RequestMapping("/contact")
+    public String contact() {
+        MailController mc = new MailController();
+        mc.autoMail();
+        return "contactFormView";
+    }
+
+    @GetMapping("/errorView")
+    public String errorViewHandler() {
 
         return "errorView";
     }
-
 
 }
