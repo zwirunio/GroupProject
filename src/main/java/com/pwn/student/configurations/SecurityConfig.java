@@ -10,48 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-<<<<<<< HEAD
-public class SecurityConfig {
-
-    @Configuration
-    @EnableWebSecurity
-    @EnableGlobalMethodSecurity(securedEnabled=true)
-    public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-        @Autowired
-        private MyAppStudentDetailsService myAppStudentDetailsService;
-
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests()
-
-                    .antMatchers("/").hasAnyRole("ADMIN","USER")
-
-                    //login configuration
-                    .and().formLogin()
-                    .loginPage("/login")
-                    .loginProcessingUrl("/login")
-                    .usernameParameter("app_username")  //pole z formularza z nazwą użytkownika
-                    .passwordParameter("app_password")  //pole z formularza z hasłem
-                    .defaultSuccessUrl("/")      // strona gdzie chcemy przejść po zalogowaniu
-
-                    //logout configuration
-                    .and().logout()
-                    .logoutUrl("/logout")          // strona do wylogowywania
-                    .logoutSuccessUrl("/login")    // strona gdzie przechodzimy po poprawnym wylogowaniu
-
-                    //exception handling configuration
-                    .and().exceptionHandling()
-                    .accessDeniedPage("/error-view");
-        }
-
-        @Autowired
-        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            auth.userDetailsService(myAppStudentDetailsService).passwordEncoder(passwordEncoder);
-        }
-
-=======
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled=true)
@@ -87,5 +45,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         auth.userDetailsService(myAppStudentDetailsService).passwordEncoder(passwordEncoder);
     }
->>>>>>> 3eb7b74c2003abdb80b09c6d7be3cee2d430fc52
 }
