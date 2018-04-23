@@ -12,7 +12,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )
-    private Long   studentId;
+    private Long  studentId;
 
     @Column(name="Student_name")
     @NotEmpty(message = "The name connot be left empty")
@@ -202,6 +202,8 @@ public class Student {
     public void setRole(String role) {
         this.role = role;
     }
+
+
 
     @Override
     public String toString() {

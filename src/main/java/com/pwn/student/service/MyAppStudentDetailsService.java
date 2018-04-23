@@ -8,12 +8,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
 @Service
 public class MyAppStudentDetailsService implements UserDetailsService {
+
+    public UserDetails userDetails;
 
     @Autowired
     private StudentRepo studentRepo;
@@ -22,19 +25,20 @@ public class MyAppStudentDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String studentEmail) throws UsernameNotFoundException {
 
         //Student activeUserInfo                   = studentRepo.getByName(studentName);
-        Student activeUserInfo                   = studentRepo.getByEmailAndPasswd(studentEmail, studentEmail);
+        Student activeUserInfo                   = studentRepo.getByEmail(studentEmail);
 
         if(activeUserInfo == null) {
             throw new UsernameNotFoundException("Student not found");
+
         }
 
-        GrantedAuthority authority            = new SimpleGrantedAuthority(activeUserInfo.getRole());
+        GrantedAuthority authority             = new SimpleGrantedAuthority(activeUserInfo.getRole());
 
-        //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        BCryptPasswordEncoder passwordEncoder  = new BCryptPasswordEncoder();
         String userEmailVal                    = activeUserInfo.getEmail();
-        String userPassVal                 = activeUserInfo.getPasswd();
+        String userPassVal                     = passwordEncoder.encode(activeUserInfo.getPasswd());
 
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User(userEmailVal, userPassVal, Arrays.asList(authority));
+        userDetails = new org.springframework.security.core.userdetails.User(userEmailVal, userPassVal, Arrays.asList(authority));
         return userDetails;
     }
 

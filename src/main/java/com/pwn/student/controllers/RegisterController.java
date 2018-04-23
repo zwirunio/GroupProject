@@ -3,6 +3,7 @@ package com.pwn.student.controllers;
 import com.pwn.student.models.Student;
 import com.pwn.student.repositories.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +25,8 @@ public class RegisterController {
 
     @PostMapping("/register")
     public String register(@ModelAttribute Student student) {
-     //   BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-     //   student.setPasswd(passwordEncoder.encode(student.getPasswd()));
+    // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    // student.setPasswd(passwordEncoder.encode(student.getPasswd()));
         studentRepo.save(student);
         return "redirect:/";
     }
