@@ -30,23 +30,23 @@
 
 <form th:action="@{/register}" th:object = "${student}" method="post">
 
-    <label for="un">Imie</label>
-    <p><input id="un" type="text" th:field = "*{name}" /></p>
+    <p><label for="un">Imię </label>
+    <input id="un" type="text" th:field = "*{name}" /></p>
 
-    <label for="uln">Nazwisko</label>
-    <p><input id="uln" type="text" th:field = "*{lname}" /></p>
+    <p><label for="uln">Nazwisko</label>
+    <input id="uln" type="text" th:field = "*{lname}" /></p>
 
-    <label for="password">Password</label>
-    <p><input id="password" type="text" th:field = "*{passwd}" /></p>
+    <p><label for="password">Password</label>
+    <input id="password" type="text" th:field = "*{passwd}" /></p>
 
-    <label for="uemail">Email</label>
-    <p><input id="uemail" type="text" th:field = "*{email}" /></p>
+    <p><label for="uemail">Email</label>
+    <input id="uemail" type="text" th:field = "*{email}" /></p>
 
     <label for="ghub">GHub</label>
-    <p><input id="ghub" type="text" th:field = "*{gitHub}" /></p>
+    <input id="ghub" type="text" th:field = "*{gitHub}" />
 
-    <label for="utel">Phone</label>
-    <p><input id="utel" type="text" th:field = "*{phone}" /></p>
+    <p><label for="utel">Phone</label>
+    <input id="utel" type="text" th:field = "*{phone}" /></p>
 
         <p><input type="submit" value = "Add" /></p>
 </form>

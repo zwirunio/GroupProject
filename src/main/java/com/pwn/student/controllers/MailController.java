@@ -11,8 +11,8 @@ import javax.mail.internet.MimeMessage;
 public class MailController {
     private static final String HOST = "smtp.gmail.com";
     private static final int PORT = 465;
-    private static final String FROM = "nataw@wp.pl";
-    private static final String PASS = "nattom";
+    private static final String FROM = "reaktor_kontakt@wp.pl";
+    private static final String PASS = "ReaktorPwn@";
     private static final String SUBJECT = "Message received";
     private static final String TO = "michal_kruczkowski@o2.pl";
 
