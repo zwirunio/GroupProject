@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
         Student getByEmail(String email);
 
+        Student getByEmailAndPhone(String email, String phone);
+
         //Student getById (Long studentId);
 
         //Student getByEmailAndPasswd(String email, String passwd);

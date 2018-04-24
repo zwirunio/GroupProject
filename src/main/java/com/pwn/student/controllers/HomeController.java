@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HomeController {
@@ -18,7 +16,8 @@ public class HomeController {
     private StudentRepo studentRepo;
 
     @Autowired
-    MyAppStudentDetailsService masds;
+    private MyAppStudentDetailsService masds;
+
 
     @Secured("ROLE_USER")
     @GetMapping("/dane")
@@ -28,6 +27,27 @@ public class HomeController {
         return "daneView";
 
     }
+    @Secured("ROLE_USER")
+    @GetMapping("/dane_zmiana")
+
+    public String daneZmiana(Model model) {
+        model.addAttribute("student", new Student());
+        return "daneChangeView";
+
+    }
+
+    @Secured("ROLE_USER")
+    @PostMapping("/dane_zmiana")
+    public String daneZmiana(@ModelAttribute Student student, Model model) {
+        Student daneStudentZmiana = studentRepo.getByEmail(masds.userDetails.getUsername());
+        model.addAttribute("daneStudentaZmiana", daneStudentZmiana);
+        studentRepo.save(daneStudentZmiana);
+        return "daneChangeView";
+
+    }
+
+
+
 
 
     @GetMapping("/")

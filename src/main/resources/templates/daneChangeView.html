@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Artykuły</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+
+</head>
+<body>
+
+<h1>Zmiana danych kontaktowych</h1>
+
+
+<form th:action="@{/dane_zmiana}" th:object = "${daneStudentaZmiana}" method="post">
+
+    <label for="em">E-mail </label>
+    <input id="em" th:name="email" th:value="${daneStudentaZmiana.email}"/>
+    <label for="te">Telefon </label>
+    <input id="te" th:value="*{phone}"/>
+    <input type="submit" value="Zmień"/>
+</form>
+
+</body>
+</html>

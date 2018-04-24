@@ -8,21 +8,22 @@
 <body>
 
 
-    
-    <p th:text="${daneStudenta.name}"></p>
-    <p th:text="${daneStudenta.lname}"></p>
-    <p th:text="${daneStudenta.email}"></p>
-    <p th:text="${daneStudenta.phone}"></p>
-    <p th:text="${daneStudenta.gitHub}"></p>
-    <p th:text="${daneStudenta.passwd}"></p>
-    <p th:text="${daneStudenta.project1grade}"></p>
-    <p th:text="${daneStudenta.project1descgrade}"></p>
-    <p th:text="${daneStudenta.project2descgrade}"></p>
-    <p th:text="${daneStudenta.project2descgrade}"></p>
-    <p th:text="${daneStudenta.project3grade}"></p>
-    <p th:text="${daneStudenta.project3descgrade}"></p>
-    <p th:text="${daneStudenta.project4grade}"></p>
-    <p th:text="${daneStudenta.project4descgrade}"></p>
+<label for="im">Imię </label>
+<p id="im" th:text="${daneStudenta.name}"></p>
+<label for="na">Nazwisko </label>
+<p id="na" th:text="${daneStudenta.lname}"></p>
+<label for="em">E-mail </label>
+<p id="em" text="${daneStudenta.project2grade}"></p>
+<label for="im">Opis Projekt 2 </label>
+<p th:text="${daneStudenta.project2descgrade}"></p>
+<label for="im">Ocena Projekt 3 </label>
+<p th:text="${daneStudenta.project3grade}"></p>
+<label for="im">Opis Projekt 3 </label>
+<p th:text="${daneStudenta.project3descgrade}"></p>
+<label for="im">Ocena Projekt 4 </label>
+<p th:text="${daneStudenta.project4grade}"></p>
+<label for="im">Opis Projekt 4 </label>
+<p th:text="${daneStudenta.project4descgrade}"></p>
 
 </body>
 </html>
