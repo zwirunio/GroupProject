@@ -16,17 +16,17 @@ public class ContactController {
     @Autowired
     private ContactRequestRepo contactRequestRepo;
 
-    @Secured("ROLE_USER")
-    @GetMapping("/contact")
-    public String contact(Model model) {
-        model.addAttribute("contact", new ContactRequest());
-        return "contactFormView";
-    }
-
-    @Secured("ROLE_USER")
-    @PostMapping("/contact")
-    public String contact(@ModelAttribute ContactRequest contactRequest) {
-        contactRequestRepo.save(contactRequest);
-        return "redirect:/";
-    }
+//    @Secured("ROLE_USER")
+//    @GetMapping("/contact")
+//    public String contact(Model model) {
+//        model.addAttribute("contact", new ContactRequest());
+//        return "contactFormView";
+//    }
+//
+//    @Secured("ROLE_USER")
+//    @PostMapping("/contact")
+//    public String contact(@ModelAttribute ContactRequest contactRequest) {
+//        contactRequestRepo.save(contactRequest);
+//        return "redirect:/";
+//    }
 }

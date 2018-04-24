@@ -46,21 +46,11 @@ public class HomeController {
 
     }
 
-
-
-
-
     @GetMapping("/")
     public String home() {
         return "index";
     }
 
-    @RequestMapping("/contact")
-    public String contact() {
-        MailController mc = new MailController();
-        mc.autoMail();
-        return "contactFormView";
-    }
 
     @GetMapping("/errorView")
     public String errorViewHandler() {
