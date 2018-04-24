@@ -27,16 +27,50 @@
 
     </head>
 <body id="page-top">
-<h1>Prosz</h1>
-<form  th:action="@{/contact}" method="post">
-    <label for="em">E-mail</label>
-    <input id="em" name="email" placeholder="Email"/> <br/>
-    <label for="sb">Subject</label>
-    <input id="sb" name="subject" placeholder="Subject"/> <br/>
-    <label for="ms">Message</label>
-    <input id="ms" name="message" placeholder="Message"/> <br/>
-    <input type="submit" value="Contact"/>
 
-</form>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/">Home</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/register">Rejestracja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/login">Logowanie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/dane">Profil kursanta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/contact">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Register form -->
+<section class="bg-primary" id="register">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">Formularz kontaktowy</h2>
+                <hr class="light my-4">
+                <form  th:action="@{/contact}" method="post">
+                    <p class="text-faded mb-5"><label for="em">E-mail</label><input id="em" name="email" placeholder="e-mail"/></p>
+                    <p class="text-faded mb-5"><label for="sb">Temat</label><input id="sb" name="subject" placeholder="temat"/></p>
+                    <p class="text-faded mb-5"><label for="ms">Wiadomość</label><input id="ms" name="message" placeholder="wiadomość"/></p>
+                    <input class="btn btn-light btn-xl js-scroll-trigger" type="submit" value = "Wyślij wiadomość"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
